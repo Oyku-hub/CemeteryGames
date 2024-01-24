@@ -19,6 +19,10 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 
+private:
+
+      class UCapsuleComponent* Capsule;
+
 
 protected:
 	// Called when the game starts or when spawned
