@@ -3,7 +3,7 @@
 
 #include "Pawns/Birds.h"
 #include "Components/CapsuleComponent.h"
-
+#include "Components/SkeletalMeshComponent.h"
 // Sets default values
 ABirds::ABirds()
 {
@@ -11,10 +11,9 @@ ABirds::ABirds()
 	PrimaryActorTick.bCanEverTick = true;
 
 	Capsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Capsule"));
-	Capsule->SetCapsuleHalfHeight(20.f);
-	Capsule->SetCapsuleRadius(15.0f);
-
 	SetRootComponent(Capsule);
+	BirdMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("BirdMesh"));
+	BirdMesh->SetupAttachment(GetRootComponent());
 
 }
 
